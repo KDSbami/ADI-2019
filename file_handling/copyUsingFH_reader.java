@@ -1,17 +1,17 @@
 import java.io.*;
 
-public class copyUsingFH_reader 
+public class copyUsingFH 
 {
     public static void main(String[] args) throws Exception
     {
         int g= 0;
         //BufferedReader scan =  new BufferedReader(new InputStreamReader(System.in));
-        File a = new File("test.java");
+        File a = new File("copyUsingFH_reader.java");
         a.createNewFile();
-        FileReader fis = new FileReader("copyUsingFH_reader.java");
-        BufferedReader dis = new BufferedReader(fis);
+        FileInputStream fis = new FileInputStream("copyUsingFH.java");
+        DataInputStream dis = new DataInputStream(fis);
 
-        PrintWriter fos = new PrintWriter(a);
+        FileOutputStream fos = new FileOutputStream(a);
         while(g!=-1)
         {
         g = dis.read();
@@ -19,8 +19,7 @@ public class copyUsingFH_reader
         }
     fos.flush();
     fos.close(); 
-    dis.close();
         //System.out.println(a);
     }
 
-}
+}ÿ
